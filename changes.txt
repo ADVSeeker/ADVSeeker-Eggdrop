@@ -1,0 +1,116 @@
+Version 0.0.1 Changes
+ * initial release only for testing
+
+Version 0.0.2 Changes
+ * added support for agressive banning
+ * added scan on join
+ * added checking whois fields (if scan on join enabled)
+ * added checking away message (if scan on join enabled)
+ * added part message scanning
+ * added support for brotcasting message to someone specifiend 
+   in advOutsideAction variable about new banned nick
+
+Version 0.0.3 Changes
+ * added support for mysql database
+ * added support for public commands:
+    * !adv addadvword {word}
+    * !adv addvirword {word}
+    * !adv addadvtext {text}
+    * !adv addvirtext {text}
+    * !adv update
+    * !adv setowner {nick}
+    * !adv setagressiveban {1|0}
+    * !adv setoutsideaction {action}
+    * !adv setoutsideactiontype {notice|prvmsg}
+    * !adv onjoinscan {0|1}
+    * !adv autoupdateenabled {0|1}
+    * !adv setmessagetype {notice|prvmsg}
+ * added Update function
+ * added Autoupdate function
+ * fixed some bugs
+ * added onjoin scan only in selected channels
+
+Version 0.1 Changes
+ * added support for public commands:
+    *  !adv addfriend {nick}
+    *  !adv ban {nick}
+    *  !adv setremovebaninterval {minutes}
+    *  !adv setautoaddtofriendslist {count}
+ * added temp ban feature
+ * added friends and enemy lists
+ * added automatic adding friend to friends list if chanserv gives
+   +o or +v
+ * added automatic adding to enemy list if user is adv
+ * added automatic adding to friend list if user was scanned many 
+   times and no adv was found
+ * added banning users who use proxies
+
+ Version 0.2 Changes
+ * fixed bug with mysql password and database selection
+ * fixed bug with autoremove ban if bot don't have op
+ * added support for using tcl-sql library (untested)
+ * added support for using fbsql library
+ * added support for ini library
+ * added !adv info command (usefull 4 everyone)
+ * added !adv enemies list command for showing enemy list
+   works only on current only with fbsql and mysqltcl
+   libraries
+ * added !adv friends list command for showing enemy list
+   works only on current only with fbsql and mysqltcl
+   libraries
+ * added Mask string type for better results
+ * added EuralisticScan variable and euralistic scanning
+   for nicknames and idents only
+ * added new ADV Seeker database commands:
+   * setclient
+   * setversion
+   * sethomepage
+ * added !adv clients command (usefull 4 everyone)
+   now you can see if there is any other scripts or
+   programs, witch use ADV Seeker database.
+ * added suuport for using public commands in private
+   chat
+ * added autoban remove if there is somebody other
+   has added ban
+ * added ScanWhoisFieldsInterval variable
+   now you can specify interval between user whois 
+   scans
+ * changed mysql value to mysqltcl if using mysqltcl library
+ * changed ini value to inidb if using inidb script
+ * changed where these variables ar storied (using database):
+    *  advOnlyScanTheseChannels
+    *  advMessageType
+    *  advScanOnlyUnknown
+    *  advAutoAddToFriendsList
+    *  advRemoveBanInterval
+    *  advBanProxies
+    *  advStringYouHaveVirus
+    *  advStringYouAreADV
+    *  advStringUsingProxy
+    *  advStringYourWishWasFullfiled
+    *  advStringYouAreMyEnemy
+    *  advStringYouWasBanned
+    *  advAgressiveBan
+    *  advOnJoinScannEnabled
+    *  advAutoUpdateEnabled
+    *  advAgent
+    *  advOutsideAction
+    *  advOutsideActionType
+ * changed sintax for using of public commands
+ * changed using of public commands:
+   some commands are public and some only for bot users
+   bot users are identified if they have same nick in 
+   bot and on IRC too, than bot is looking in hostmasks
+   in database and current. 
+ * fixed mysql errors with some nicknames containing
+   characters ' " \ (but somethimes it fails too :( )
+ * fixed for scanning whois nicks, when nick has changed
+   faster than get whois
+ * improved database library loading
+ * improved whois info scan when joining any channel
+   where bot is
+ * removed PublicCommands variable
+ * added support for auth.tcl v1.2 by Bommer (automatic detection)
+ * added support for Auth v1.03 by David Proper (Dr. Nibble [DrN])
+   (automatic detection)
+ * fixed autoupdate bug on bot startup
